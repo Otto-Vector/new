@@ -1,0 +1,732 @@
+@import url("reset.css");
+@import url("fonts.css");
+
+body {
+    background: url("../images/bg1.png") repeat;
+}
+
+/*//////Первый блок со слоганом и меню////////////////*/
+#promo {
+    background: url("../images/head_bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    padding-bottom: 100px;
+}
+
+#promo #line {
+    background-color: rgba(0,0,0,0.6);
+    box-shadow: 0px 15px 30px 50px rgba(0,0,0,0.5);
+    height: 1px;
+    position: fixed;
+    top: 1px;
+    width: 100%;
+    z-index: 1;
+}
+
+#promo header {
+    align-items: center;
+    align-content: center;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+#promo header figure {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+#promo nav {
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+#promo nav span {
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 150%;
+    font-family: Gentium;
+    padding: 50px 12px 5px;
+    margin: 0 12px;
+}
+
+#promo nav span.active,
+    #promo nav span:hover {
+    padding-top: 47px;
+    border-top: 3px solid rgba(256,256,256,0.8);
+}
+
+#promo #socials_top {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    order: 1;
+    margin-bottom: 5px;
+}
+
+@media (max-width:1095px){
+    #promo #socials_top {
+        display: none;
+    }
+}
+
+#promo #socials_top a {
+    border-radius: 40%;
+    height: 22px;
+    margin: 50px 5px 0px;
+    transition-property: transform;
+    transition-duration: 0.4s;
+    width: 22px;
+}
+
+#promo #socials_top a:hover {
+    transform: scale(1.2);
+}
+
+#promo #socials_top a.twitter {
+    background: url("../images/social_head.png") 1px 50% no-repeat;
+    background-color: rgba(0,0,0,0.2);
+}
+#promo #socials_top a.youtube {
+    background: url("../images/social_head.png") -36px 50% no-repeat;
+    background-color: rgba(0,0,0,0.2);
+}
+#promo #socials_top a.facebook {
+    background: url("../images/social_head.png") -66px 50% no-repeat;
+    background-color: rgba(0,0,0,0.2);
+}
+
+@media (max-width:995px){
+    #promo header figure {
+        display: none;
+    }
+    #promo nav span {
+        padding-top: 30px;
+    }
+    #promo nav span.active,
+    #promo nav span:hover {
+        padding-top: 27px;
+    }
+    #promo #socials_top a {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width:800px){
+    #promo nav span {
+        margin: 0px;
+    }
+}
+
+@media (max-width:670px){
+    #promo nav span {
+        font-size: 120%;
+    }
+}
+
+@media (max-width:570px){
+    #promo nav span {
+        font-size: 100%;
+        transform: scaleY(1.15);
+        transform-origin: top;
+    }
+}
+
+@media (max-width:470px){
+    #promo nav span {
+        padding-left: 6px;
+        padding-right: 6px;
+    }
+}
+
+#promo #slogan {
+    padding-top: 150px;
+}
+
+#promo #slogan h1 {
+    color: #f6f5f4;
+    font-family: Yeseva;
+    font-size: 500%;
+    line-height: 125%;
+    text-align: center;
+    text-shadow: 0 1px 1px #000;
+}
+
+@media (max-width:800px){
+    #promo #slogan {
+        padding-top: 110px;
+    }
+    #promo #slogan h1 {
+        font-size: 400%;
+    }
+}
+
+@media (max-width:480px){
+    #promo #slogan {
+        padding-top: 100px;
+    }
+    #promo #slogan h1 {
+        font-size: 300%;
+    }
+}
+
+#promo #slogan figure {
+    padding-top: 30px;
+    text-align: center;
+}
+
+#promo #slogan #buttons {
+    display: flex;
+    justify-content: center;
+}
+
+#promo #slogan #buttons a {
+    background: rgba(0,0,0,0.5);
+    border: 1px solid rgba(0,0,0,0.9);
+    color: #fff;
+    display: inline-block;
+    font-family: Lato;
+    padding: 20px 50px;
+    margin: 40px 15px;
+    transition-property: background, border;
+    transition-duration: 0.5s;
+    text-align: center;
+}
+
+#promo #slogan #buttons a:hover {
+    background: rgba(255,255,255,0.5);
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+@media (max-width:500px){
+    #promo #slogan #buttons a {
+        padding: 20px;
+    }
+}
+
+@media (max-width:370px){
+    #promo #slogan #buttons a {
+        padding: 20px 10px;
+    }
+}
+
+/*////Второй блок с краткой презентацией////////*/
+
+#about {
+    align-items: center;
+    box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,0.09);
+    background: linear-gradient(-133deg,rgba(0,0,0,0.1),rgba(0,0,0,0.01));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 110px 60px 50px;
+}
+
+#about article {
+    width: 415px;
+    text-align: center;
+}
+
+#about article h2 {
+    color:#c90;
+    font-family: Yeseva;
+    font-size: 200%;
+    line-height: 200%;
+    text-shadow: 0px 1px 1px #eee;
+}
+
+#about article img[alt="divider"] {
+    padding-bottom: 20px;
+}
+
+#about article p {
+    color: #4c4c4c;
+    font-family: Lato;
+    line-height: 160%;
+}
+
+#about article figure img {
+    padding-top: 45px;
+    padding-left: 20%;
+}
+
+@media (max-width:1150px){
+    #about {
+        padding-top: 90px;
+    }
+    #about > figure {
+        display: none;
+    }
+}
+
+/*//////////Блок с ингридиентами/////////////*/
+
+#ingridients {
+    background: url("../images/ingridients_bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    padding: 120px 10% 100px 50%;
+}
+
+#ingridients article {
+    background: url("../images/ingridients_bg2.png") no-repeat;
+    background-size: cover;
+    padding: 9%;
+    text-align: center;
+    width: 82%;
+}
+
+#ingridients article h2 {
+    color: #fff;
+    font-family: Yeseva;
+    font-size: 200%;
+    line-height: 200%;
+}
+
+#ingridients article img {
+    padding-bottom: 20px;
+}
+
+#ingridients article p {
+    color: #fff;
+    font-family: Lato;
+    line-height: 160%;
+}
+
+#ingridients article section {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-evenly;
+    padding-top: 60px;
+}
+
+#ingridients article section div {
+    background: url("../images/ingridients.png") no-repeat;
+    border-radius: 50%;
+    background-position: 0% 50%;
+    border: 5px solid rgba(255,255,255,0.1);
+    height: 100px;
+    width: 100px;
+    transition-property: transform;
+    transition-duration: 0.5s;
+}
+
+#ingridients article section div:nth-child(2) {
+    background-position: 50% 50%;
+}
+
+#ingridients article section div:nth-child(3) {
+    background-position: 100% 50%;
+}
+
+#ingridients article section div:hover {
+    transform: rotate(360deg);
+}
+
+@media (max-width:1000px){
+    #ingridients {
+    padding: 110px 10%;
+    }
+}
+
+@media (max-width:500px){
+    #ingridients article section {
+    padding-top: 30px;
+    }
+    #ingridients article section div {
+    border: none;
+    height: 50px;
+    width: 50px;
+    }
+}
+
+/*////////БЛОК МЕНЮ С ЦЕНАМИ//////////////*/
+
+#menulist {
+    background: linear-gradient(-44deg,rgb(32, 90, 91,0.1),rgba(32,90,91,0.01)),
+        url("../images/bg3.png");
+    box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,0.09);
+    padding: 100px 10px 70px;
+}
+
+#menulist #wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+#menulist article {
+    margin: 20px;
+    width: 420px;
+}
+
+#menulist article h3,
+    #menulist article section h4,
+        #menulist article section span {
+    font-family: Yeseva;
+}
+
+#menulist article h3 {
+    color:#c90;
+    font-size: 200%;
+    line-height: 200%;
+    text-align: center;
+    text-shadow: 0px 1px 1px #bbb;
+}
+
+#menulist article figure {
+    text-align: center;
+}
+
+#menulist article section {
+    color:#c89f2d;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    line-height: 190%;
+    margin-top: 25px;
+    padding: 0px 10px;
+    position: relative;
+}
+
+#menulist article section h4, #menulist article section span {
+    font-size: 120%;
+}
+
+#menulist article section p {
+    border-top: 1px solid #c90;
+    border-image: url("../images/borderline_menu.png") 1 stretch;
+    color: #4c4c4c;
+    font-family: Lato;
+    width: 100%;
+}
+
+#menulist article section.special {
+    border: 1px solid #e3b639;
+    border-radius: 2px;
+}
+
+#menulist article section.special:before {
+    background: url("../images/special_bg.png");
+    content: "Special";
+    color: #fff;
+    font-family: Lato;
+    line-height: 150%;
+    position: absolute;
+    padding: 0px 12px;
+    right: -1px;
+    top: -25px;
+}
+
+/*////////БЛОК ОЗЫВОВ ПОСЕТИТЕЛЕЙ//////////////*/
+
+#reviews {
+    background: url("../images/review_bg.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    padding: 110px 10px 80px;
+}
+
+#reviews article {
+    background: url("../images/review_bg2.png") no-repeat;
+    background-size: cover;
+    color: #fff;
+    margin: 0px auto;
+    padding: 80px 70px;
+    text-align: center;
+    width: 50%;
+}
+
+@media (max-width:950px){
+    #reviews article {
+    padding: 50px;
+    width: 60%;
+    }
+}
+
+@media (max-width:650px){
+    #reviews article {
+    width: 70%;
+    }
+}
+
+#reviews article h2 {
+    font-family: Yeseva;
+    font-size: 250%;
+    line-height: 180%;
+}
+
+@media (max-width:530px){
+    #reviews article h2 {
+    font-size: 180%;
+    }
+}
+
+@media (max-width:420px){
+    #reviews article h2 {
+    font-size: 150%;
+    }
+}
+
+#reviews article img {
+    margin-bottom: 20px;
+}
+
+#reviews article p.cont {
+    font-family: Gentium;
+    font-size: 150%;
+    line-height: 150%;
+    position: relative;
+}
+
+@media (max-width:750px){
+    #reviews article p.cont {
+    font-size: 130%;
+    line-height: 130%;
+    }
+}
+
+@media (max-width:530px){
+    #reviews article p.cont {
+    font-size: 110%;
+    }
+}
+
+#reviews article p.cont:before {
+    content: ",,";
+    color: rgba(255,255,255,0.5);
+    display: block;
+    font-family: Yeseva;
+    font-size: 330%;
+    position: absolute;
+    left: -35px;
+    top: 10px;
+    transform: rotate(180deg);
+}
+
+#reviews article p:last-child {
+    padding-top: 25px;
+    font-family: Lato;
+    font-size: 110%;
+}
+
+/*////////БЛОК РЕЗЕРВАЦИИ(ФОРМЫ)//////////////////*/
+
+#reservations {
+    background: linear-gradient(-103deg,rgb(12,52,53,0.1),rgba(12,52,53,0.001));
+    box-shadow: inset 0px 0px 25px 25px rgba(0,0,0,0.07);
+    display: flex;
+    padding: 110px 4% 100px;
+    justify-content: center;
+}
+
+#reservations figure {
+    display:flex;
+    flex-shrink: 0;
+    justify-content: space-around;
+    width: 50%;
+}
+
+#reservations figure img {
+    width: 45%;
+}
+
+@media (max-width:1030px){
+    #reservations figure {
+        width: 30%;
+    }
+    #reservations figure img:first-child{
+    display: none;
+    }
+    #reservations figure img:last-child{
+        width: 90%;
+    }
+}
+
+@media (max-width:750px){
+    #reservations {
+        padding-top: 80px;
+    }
+    #reservations figure {
+        display: none;
+    }
+}
+
+#reservations aside {
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    margin: 0px auto;
+    width: 90%;
+}
+
+#reservations aside article {
+    text-align: center;
+}
+
+#reservations aside article h2 {
+    color: #c90;
+    font-family: Yeseva;
+    font-size: 250%;
+    line-height: 180%;
+    text-shadow: 0px 1px 1px #aaa;
+}
+
+#reservations aside article img[alt="divider"] {
+    padding-bottom: 20px;
+}
+
+#reservations aside article p {
+    color: #4c4c4c;
+    font-family: Lato;
+    font-size: 110%;
+    line-height: 160%;
+    padding-bottom: 10px;
+}
+
+#reservations aside form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+#reservations aside form div.wrap {
+    width: 45%;
+}
+
+@media (max-width:560px){
+    #reservations aside form div.wrap {
+    width: 95%;
+    }
+}
+
+#reservations aside form div.wrap div {
+    width: 204px;
+    margin: 0px auto;
+}
+
+#reservations aside form label {
+    display: inline-block;
+    color: #c9a131;
+    font-family: Myriad Pro;
+    font-weight: bold;
+    padding-bottom: 6px;
+    width: 100%;
+}
+
+#reservations aside form input,
+#reservations aside form select {
+    display: inline;
+    background: rgba(255,255,255,0.5);
+    border: 1px solid #c8c6c6;
+    font-family: Arial;
+    font-size: 100%;
+    height: 34px;
+    margin-bottom: 28px;
+    padding-left: 10px;
+    width: 190px;
+}
+
+#reservations aside form select {
+    height: 38px;
+    width: 204px;
+}
+
+#reservations aside form input:focus,
+    #reservations aside form select:focus {
+    border-color: #c89f2d;
+}
+
+#reservations aside form input[name='date'] {
+    background: url("../images/date_icon.png") 85% 45% no-repeat rgba(255,255,255,0.5);
+    padding-right: 10px;
+    width: 180px;
+}
+
+#reservations aside form select {
+    background: url("../images/party_icon.png") 94% 50% no-repeat rgba(255,255,255,0.5);
+}
+
+#reservations aside form input[type='submit'] {
+    color: #fff;
+    background-color: #c9a131;
+    border: none;
+    font-size: 100%;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+/*////////////ПОДВАЛ//////////////////*/
+
+footer {
+    background-color: #191919;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 30px 50px;
+}
+
+footer article {
+    line-height: 180%;
+    margin: 20px 0px;
+    text-align: center;
+    width: 350px;
+}
+
+footer article h5 {
+    color: #fefefe;
+    font-family: Yeseva;
+    font-size: 200%;
+    line-height: 180%;
+}
+
+footer article img[alt='divider'] {
+    padding-bottom: 20px;
+}
+
+footer article p {
+    color: #fff;
+    font-family: Open Sans;
+}
+
+footer article figure,
+    footer article section {
+    padding-top: 50px;
+}
+
+footer article section {
+    display:flex;
+    justify-content: center;
+}
+
+footer article section a {
+    background: url("../images/social_footer.png") #191919;
+    border-radius: 3px;
+    height: 17px;
+    margin-left: 15px;
+    width: 15px;
+}
+
+footer article section a:nth-child(2) {
+    background: url("../images/social_footer.png") 28% #191919;
+}
+
+footer article section a:nth-child(3) {
+    background: url("../images/social_footer.png") 64% #191919;
+}
+
+footer article section a:nth-child(4) {
+    background: url("../images/social_footer.png") 100% #191919;
+}
+
+footer article section a:hover {
+    background-color: gray;
+}

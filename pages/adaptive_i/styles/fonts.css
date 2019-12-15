@@ -1,0 +1,17 @@
+@font-face {
+    font-family: Gentium;
+    src: url("../fonts/Gentium.woff2") format("woff2"),
+        url("../fonts/Gentium.woff") format("woff");
+}
+
+@font-face {
+    font-family: Lato;
+    src: url("../fonts/Lato.woff2") format("woff2"),
+        url("../fonts/Lato.woff") format("woff");
+}
+
+@font-face {
+    font-family: Yeseva;
+    src: url("../fonts/Yeseva.woff2") format("woff2"),
+        url("../fonts/Yeseva.woff") format("woff");
+}

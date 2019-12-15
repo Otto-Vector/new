@@ -1,0 +1,55 @@
+body {
+    background: url("../images/bg3.png");
+}
+
+input {
+  outline: 0;
+}
+
+#colorSelector {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#colorSelector label,
+    #colorSelector div {
+    padding: 10px 5px 10px 0px;
+}
+
+#colorSelector input[type="radio"] {
+    box-shadow: 0 0 0px 0px #000;
+    transition-property: box-shadow;
+    transition-duration: 0.25s;
+}
+
+@media (max-width:580px){
+    #colorSelector label {
+        width: 100%;
+    }
+    #colorSelector div {
+        font-weight: bold;
+    }
+}
+
+#searcher {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+}
+#searcher input {
+    margin-left: 10px;
+}
+
+#searcher #counter {
+    margin: 3px 15px 0 15px;
+    font-style: italic;
+}
+
+p {
+    font-size: 110%;
+}
+
+.paragraph b {
+    color:royalblue;
+    text-decoration: underline;
+}

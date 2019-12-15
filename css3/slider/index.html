@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Пример карусели на CSS3</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Слайдер карусель на чистом CSS3" />
+    <meta name="keywords" content="CSS, CSS3 объекты для создания сайтов, карусель, слайдер" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo_icon.jpg"  />
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+<body>
+
+<!--Тут находится наш главный блок-обертка.
+Так как слайды карусели получают высоту от родителя, мы вынуждены точно задать их высоту. -->
+<section class="carousel-wrapper" >
+<!--Карусель использует обычные ссылки для ротации.
+Ссылки используют свойство display: none; тегов span для того,
+чтобы наша страница не вела себя, как при нажатии на обычную ссылку.-->
+
+    <span id="target-item-1_l"></span>
+    <span id="target-item-2_l"></span>
+    <span id="target-item-3_l"></span>
+<!--#ottovector: нужно создавать два вида таргетов для применения анимации справа или слева соответственно-->
+    <span id="target-item-1_r"></span>
+    <span id="target-item-2_r"></span>
+    <span id="target-item-3_r"></span>
+
+<!--Тут располагаются слайды карусели.
+У каждого элемента есть класс 'carousel-item', который мы используем для общих стилей, 
+а так же класс item-#, который используется для контроля прозрачности. 
+Прозрачность зависит от того, на каком target-item-# сейчас фокус--> 
+    <div class="carousel-item item-1">
+<!--Тут ссылки для управления каруселью! Убедитесь,
+что каждый атрибут href ссылается на верный target-item-# так чтобы карусель зацикливалась.
+#ottovector: (для prev  добавляется "_l" а для next соответственно "_r"-->
+        <a class="arrow arrow-prev" href="#target-item-3_l"></a>
+        <a class="arrow arrow-next" href="#target-item-2_r"></a>
+<!--Сюда можно добавить любой контент, только убедитесь, что ваш класс 
+.carousel-wrapper имеет достаточную высоту для хранения всего содержимого.-->
+        <div class="content" >
+            <h2>JUICY TOWN</h2>
+            <img alt="" src="image_2.png">
+        </div>
+    </div>
+
+<!--Тут еще парочка div’ов. Заметили класс 'light'?
+Royalblue достаточно темный цвет для заднего фона,
+и если слайд карусели имеет этот класс, мы можем добавить CSS правило, чтобы сделать текст белым,.-->
+
+    <div class="carousel-item item-2 light">
+        <a class="arrow arrow-prev" href="#target-item-1_l"></a>
+        <a class="arrow arrow-next" href="#target-item-3_r"></a>
+        <div class="content" >
+            <h2>FLAME</h2>
+            <img alt="" src="image_1.png">
+        </div>
+    </div>
+
+    <div class="carousel-item item-3">
+        <a class="arrow arrow-prev" href="#target-item-2_l"></a>
+        <a class="arrow arrow-next" href="#target-item-1_r"></a>
+        <div class="content" >
+            <a href="#">LOTUS</a>
+            <img alt="lotus" src="image_3.png">
+        </div>
+    </div>
+
+</section>
+<footer>
+    <a href="http://pagemakers.ru">ДОМОЙ</a>
+</footer>
+
+</body>
+</html>

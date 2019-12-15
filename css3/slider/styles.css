@@ -1,0 +1,306 @@
+/*Источник:
+dancort.es/web-design/2015/05/17/how-to-make-carousel-only-html-css-no-javascript.html*/
+
+/*//////////БЛОК ПОДКЛЮЧЕНИЯ ШРИФТОВ////////////////////*/
+@font-face {
+    font-family: junegull;
+    src: url("junegull.woff2") format("woff2"), url("junegull.woff") format("woff");
+}
+
+
+/*#ottovector: правила анимации для плавного выезда элементов*/
+@keyframes rightt {
+    1% {transform-origin: right center;
+        transform: translateX(1000px);
+        }
+        80% {
+            transform: translateX(-80px);
+        }
+}
+@-moz-keyframes rightt {
+    1% {transform-origin: right center;
+        transform: translateX(1000px);
+        }
+        80% {
+            transform: translateX(-80px);
+        }
+}
+@-webkit-keyframes rightt {
+    1% {transform-origin: right center;
+        transform: translateX(1000px);
+        }
+        80% {
+            transform: translateX(-80px);
+        }
+}
+
+@keyframes lefft {
+    1% {transform-origin: left center;
+        transform: translateX(-1000px);
+        }
+        80% {
+            transform: translateX(80px);
+        }
+}
+
+@-moz-keyframes lefft {
+    1% {transform-origin: left center;
+        transform: translateX(-1000px);
+        }
+        80% {
+            transform: translateX(100px);
+        }
+}
+
+@-webkit-keyframes lefft {
+    1% {transform-origin: left center;
+        transform: translateX(-1000px);
+        }
+        80% {
+            transform: translateX(80px);
+        }
+}
+
+/* Тут начинается наша карусель. Блок .carousel-wrapper спозиционирован
+относительно, абертки .carousel-item абсолютно. */
+body {
+    background: linear-gradient(-45deg,rgba(0,0,0,0.4),rgba(0,0,0,0.1)), url("bg1.png");
+    padding-bottom: 30px;
+}
+a {
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-wrapper {
+  border-radius: 5px;
+  height: 400px;
+  position: relative;
+  text-align: center;
+}
+  /* Абсолютно спозиционированные блоки получают высоту и ширину от родителя.
+Мы сделали их прозрачными по умолчанию, и потом они будут плавно появляться по нажатию на ссылки .arrow-prevи .arrow-next. */
+  
+.carousel-wrapper .carousel-item {
+    background: url("bg_1.jpg") 50% 50% no-repeat;
+    background-size: cover;
+    bottom: 0;
+    box-shadow: inset 1px 1px 4px 1px #555;
+    border-radius: 4px;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    padding: 25px auto;
+    right: 0;
+    top: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.carousel-wrapper .carousel-item .content {
+    display: flex;
+    flex-direction: column;
+    height: 90%;
+}
+
+.carousel-wrapper .carousel-item .content img{
+    height: 250px;
+}
+
+/*////////////////////БЛОК НАПОЛНЕНИЯ КОНТЕНТА//////////////////////////////*/
+
+.carousel-wrapper .carousel-item.item-1 {
+    background-image: url("bg_31.jpg");
+}
+
+.carousel-wrapper .carousel-item.item-2 {
+    background-image: url("bg_2.jpg");
+}
+
+.carousel-wrapper .carousel-item.item-2 .content h2 {
+    color: brown;
+    font-size: 200%;
+    text-shadow: 1px -2px 3px yellow;
+}
+
+.carousel-wrapper .carousel-item.item-3 {
+    background-image: url("bg_1.jpg");
+}
+
+.carousel-wrapper .carousel-item.item-3 .content a {
+    padding-bottom: 20px;
+    font-family: junegull, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+    background-image: url("flowers/f5.png");
+    background-size: 150% auto;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: rgba(0, 0, 0, 0);
+    text-shadow: -3px -3px 3px pink;
+}
+
+.carousel-wrapper .carousel-item.item-3 .content a:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+/* если блок .carousel-item имеет класс 'light',
+мы изменим его текст на белый и используем белые стрелки вместо серых.
+Проверьте еще раз, правильно ли указан путь к изображению стрелки */
+
+.carousel-wrapper .carousel-item.light {
+    color: whitesmoke;
+}
+
+/*////////////////////////БЛОК НАСТРОЙКИ СТРЕЛОК/////////////////////////////*/
+ /* Я использую пустые ссылки с фоновым рисунком таким образом, 
+ что ссылки выглядят как стрелки. Проверьте, поменяли ли вы URL ссылок с оригинальным URL, 
+ чтобы ваши ссылки не были просто прозрачными прямоугольниками. */
+.carousel-wrapper .carousel-item .arrow {
+    position: absolute;
+    top: 0;
+    display: block;
+    width: 50px;
+    height: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    background: url("left_active.png") 50% 50% no-repeat;
+    z-index: 10;
+}
+
+
+.carousel-wrapper .carousel-item.light {
+    color: whitesmoke;
+}
+
+.carousel-wrapper .carousel-item .arrow.arrow-prev {
+    left: 0;
+}
+
+/* Давайте вернем нашу стрелку налево. */
+.carousel-wrapper .carousel-item .arrow.arrow-next {
+    right: 0;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.carousel-wrapper .carousel-item.light .arrow {
+    background: url("left.png") 50% 50% no-repeat;
+}
+
+/*Напишем медиа-запрос для изменения размера стрелок на устройствах с меньшим размером экрана.*/
+@media (max-width: 480px) {
+  .carousel-wrapper .carousel-item .arrow,
+  .carousel-wrapper .carousel-item.light .arrow {
+    background-size: 15px;
+    background-position: 10px 50%;
+  }
+}
+
+/*/////////БЛОК МАНИПУЛЯЦИИ СО СЛОЯМИ/////////////////*/
+
+/* Установим таргетам для ссылок значение display: none;
+Таким образом, мы избавляемся от постоянного перепрыгивания браузера в самый верх карусели при каждом нажатии на стрелки.
+Это свойство действует для любых элементов, чей идентификатор начинается на 'target-item'. */
+.carousel-wrapper [id^="target-item"] {
+  display: none;
+}
+
+/* Выше мы сделали все наши слайды карусели прозрачными, а это значит,
+что во время загрузки карусели мы будем получать вместо нее большое пустое поле.
+Изменим значение прозрачности для первого слайда на 1 для отображения.
+Так же устанавливаем z-index значение 2, позиционируя его выше остальных слайдов. */
+.carousel-wrapper .item-1 {
+  z-index: 2;
+  opacity: 1;
+}
+
+/* Но нам не нужно, чтобы первый слайд всегда имел значение прозрачности opacity: 1;
+в противном случае нам придется пробираться через этот слайд, во время ротации остальных. */
+.carousel-wrapper *:target ~ .item-1 {
+  opacity: 0;
+}
+
+/* ..но если #target-item-1 в фокусе, и мы хотим показать первый слайд,
+тогда выбираем его с помощью значка ~ и устанавливаем прозрачность опять в 1:-) */
+.carousel-wrapper #target-item-1_l:target ~ .item-1,
+.carousel-wrapper #target-item-1_r:target ~ .item-1 {
+    opacity: 1;
+}
+/*#ottovector: отдельно задаём анимацию для контента,
+чтобы слайд не анамировался вместе со стрелочками навигации*/
+.carousel-wrapper #target-item-1_l:target ~ .item-1 .content {
+    -webkit-animation: lefft 0.4s ease-in-out;
+    -moz-animation: lefft 0.4s ease-in-out;
+    -ms-animation: lefft 0.4s ease-in-out;
+    animation: lefft 0.4s ease-in-out;
+}
+/*#ottovector для левой и для правой анимации отдельно*/
+.carousel-wrapper #target-item-1_r:target ~ .item-1 .content  {
+    -webkit-animation: rightt 0.4s ease-in-out;
+    -moz-animation: rightt 0.4s ease-in-out;
+    -ms-animation: rightt 0.4s ease-in-out;
+    animation: rightt 0.4s ease-in-out;
+}
+
+/* Если другие target-item-# в фокусе, выбираем их используя ~ селектор,
+плавно показываем, и размещаем их сверху с помощьюz-index: 3.
+Тут и в html вы можете добавить дополнительные span с идентификатором target-item,
+если их у вас будет больше трех. Может сразу и добавить 10 штук.. */
+.carousel-wrapper #target-item-2_l:target ~ .item-2,
+.carousel-wrapper #target-item-3_l:target ~ .item-3,
+.carousel-wrapper #target-item-2_r:target ~ .item-2,
+.carousel-wrapper #target-item-3_r:target ~ .item-3 {
+  z-index: 3;
+  opacity: 1;
+}
+
+/* аналогично для эффектов правой и левой стрелки*/
+.carousel-wrapper #target-item-2_l:target ~ .item-2 .content,
+.carousel-wrapper #target-item-3_l:target ~ .item-3 .content {
+    -webkit-animation: lefft 0.4s ease-in-out;
+    -moz-animation: lefft 0.4s ease-in-out;
+    -ms-animation: lefft 0.4s ease-in-out;
+    animation: lefft 0.4s ease-in-out;
+}
+
+.carousel-wrapper #target-item-2_r:target ~ .item-2 .content,
+.carousel-wrapper #target-item-3_r:target ~ .item-3 .content {
+  z-index: 3;
+  opacity: 1;
+  -webkit-animation: rightt 0.4s ease-in-out;
+  -moz-animation: rightt 0.4s ease-in-out;
+  -ms-animation: rightt 0.4s ease-in-out;
+  animation: rightt 0.4s ease-in-out;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+
+footer{
+    padding-top: 40px;
+    text-align: center;
+}
+
+footer a {
+    background: navy;
+    border: 2px solid blue;
+    box-shadow: 0 0 5px 1px black;
+    border-radius: 5px;
+    color: wheat;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px 20px;
+    text-shadow: 0 0 1px whitesmoke;
+    transition-property: text-shadow;
+    transition-duration: 0.5s;
+}
+
+footer a:hover {
+    text-shadow: 0 0 5px whitesmoke;
+}

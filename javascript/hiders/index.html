@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ИСЧЕЗАЮЩИЕ БЛОКИ</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="styles/main.css" />
+        <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+        <script type="text/javascript" src="js/javascript.js"></script>
+        <script type="text/javascript" src="js/checkform.js"></script>
+    </head>
+    
+    <body>
+        <section>
+            <div id="n1" class="hiders" ><span></span><span>1</span></div>
+            <div id="n2" class="hiders" ><span></span><span>2</span></div>
+            <div id="n3" class="hiders" ><span></span><span>3</span></div>
+            <div id="n4" class="hiders" ><span></span><span>4</span></div>
+            <div id="n5" class="hiders" ><span></span><span>5</span></span></div>
+        </section>
+        <br/>
+        <div id="forms">
+            <h3>Введите номер блока, который надо спрятать/вывести или нажмите на него:</h3>
+            <input type="text" name="toggleHideAtNumber" placeholder="#" />
+            <p>
+            <input type="button" name="returnBlocks" value="Вернуть все блоки" />
+            <input type="button" name="rehideBlocks" value="Пере-вернуть все блоки"/>
+            <input type="button" name="hideBlocks" value="Спрятать все блоки"/>
+            <input type="button" name="hipnose" value="Гипноз" title="вкл/выкл"/>
+            </p>
+        </div>
+        <br/>
+        <footer>
+        <fieldset> <legend>Данные для проверки</legend>                
+        <form name="myform" action="#" method="post" onsubmit="return checkForm(this)">
+            <p><label for="login">Логин:</label>
+                <input id="login" name="login" type="text" oninput="charCounter(this,19,19,'loginCounter')" onblur="checkLogin(this.value)"/><span id="loginCounter"></span>
+            </p>
+            <p><label for="mail">Почта:</label>
+                <input id="mail" name="mail" type="mail" />
+            </p>
+            <p><label for="note">Примечание:</label><span id="textCounter"></span></p>
+            <p>
+                <textarea id="note" name="note" type="text" rows="5" placeholder="Введите небольшой текст" oninput="charCounter(this,210,300,'textCounter')"></textarea>
+            </p>
+            <p>
+                <input name="submit" type="submit" value="Отправить на проверку"/>
+            </p>
+        </form>
+        </fieldset>
+    </footer>
+    </body>
+</html>

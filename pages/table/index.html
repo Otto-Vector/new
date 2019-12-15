@@ -1,0 +1,685 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+    <title> Box &amp; Cube </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Описание" />
+    <meta name="keywords" content="ключевые, слова, соответсвующие, содержанию, страницы" />
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <link rel="icon" type="image/x-icon" href="images/star.png"  />
+    <script type="text/javascript" >
+        //функция присваивания/изменения значения звёздности элемента
+        function starChange(star) {
+            star.classList.toggle("active");//ставит-снимает значение active в выбранном элементу
+            $(star).siblings(".left").attr("class","left");//ставит значение только left на остальные звёзды на том же уровне вложенности
+        }
+        //функция таймера внизу страницы
+        var hour=0; min=0,sec=-1;
+        var mmin="", ssec="";
+        function timer() {
+            sec++;
+            if (sec==60){min++; sec=0;}
+            if (min==60){hour++; min=0;}
+            ssec=(sec<10)?("0"+sec):sec;
+            mmin=(min<10)?("0"+min):min;
+            document.getElementById("timer").innerHTML = hour +":"+ mmin +":"+ ssec;
+            setTimeout("timer()",1000);
+        }
+            
+    </script>
+</head>
+<body onload="timer()">
+    
+    <div id="headerlogo">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td id="logo" class="header">
+                    <img src="images/logo.jpg" alt="logo" />
+                </td>
+                <td id="mmenu" class="header top">
+                    <table>
+                        <tr>
+                            <td>
+                                <a href="#">Home</a>
+                            </td>
+                            <td></td><td><p>|</p></td><td></td>
+                            <td>
+                                <a href="#">About</a>
+                            </td>
+                            <td></td><td><p>|</p></td><td></td>
+                            <td>
+                                <a href="#">Contacts</a>
+                            </td>
+                            <td></td><td><p>|</p></td><td></td>
+                            <td>
+                                <a href="#">Blog</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="splace" class="header top">
+                    <div class="up">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img alt="subscribe" src="images/black_wifi.png" id="sc"/>
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <td>
+                                                <p>Please subscribe to:</p>                                                   
+                                            </td>
+                                            <td></td>
+                                            <td>
+                                                <a href="#">Posts</a>
+                                            </td>
+                                            <td></td><td><p>|</p></td><td></td>
+                                            <td>
+                                                <a href="#">Comments</a>
+                                            </td>
+                                            <td></td><td><p>|</p></td><td></td>
+                                            <td>
+                                                <a href="#">Email</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <div id="search">
+                                    <form name="searchform" action="#" method="post">
+                                        <div>
+                                            <input type="text" placeholder="Enter Search Keyword" name="search1"/>
+                                            <input type="image" name="submit" src="images/search.jpg" />
+                                        </div>
+                                    </form>
+                                    </div>
+                                </td>
+
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+                <td id="aftersplace" class="header">
+                <p></p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="black-line"></div>
+    <div id="menu">
+        <table>
+            <tr>
+                <td>
+                <a href="#"><span>WEB PROFESSIONALS</span></a>
+                </td>
+                <td>
+                <a href="#"><span>BUSINESS</span></a>
+                </td>
+                <td>
+                <a href="#"><span>WEB DSIGN</span></a>
+                </td>
+                <td>
+                <a href="#"><span>MEDIA</span></a>
+                </td>
+                <td>
+                <a href="#"><span>ENTERTAIMENT</span></a>
+                </td>
+                <td>
+                <a href="#"><span>NON-PROFIT</span></a>
+                </td>
+                <td>
+                <a href="#"><span>INSTITUTIONS</span></a>
+                </td>
+                <td>
+                <a href="#"><span>PORTALS</span></a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="content">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Lets Make Movies</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_1.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Paint Me Now</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_2.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">System Gears</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_3.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Magic Wand</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_4.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">iPhone Icons</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_5.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Contact Me Icons</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_6.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Hardware Support</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_7.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Website Review</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_8.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>                    
+            </tr>
+            <tr>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Blue Tubes</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_9.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Throw Me Away</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_10.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Got Coffe?</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_11.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+
+                </td>
+                <td>
+                    <table class="cont" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <td class="cont_top">
+                            <p class="left">Housing For You!</p>
+                            <a href="#"><img class="icom" alt="comm" src="images/comm_gray.png" /></a>
+                            <p class="right">12</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_middle">
+                            <a href="#"><img alt="cont_1" src="images/content/image_12.png" /></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="cont_bottom">
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <span class="left active" onclick="starChange(this)"></span>
+                            <span class="left" onclick="starChange(this)"></span>
+                            <a href="#" class="right comm"><span>Write a comment</span></a>
+                        </td>
+                    </tr>
+                    </table>
+                </td>                    
+            </tr>
+        </table>
+        <div id="pagination">
+            <p>You are looking at <span>page 1 of 9</span></p>
+            <table>
+                <tr>
+                    <td>
+                        <a href="#"><span class="active">1</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>2</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>3</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>4</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>5</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>6</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>7</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>8</span></a>
+                    </td>
+                    <td>
+                        <a href="#"><span>9</span></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="footer">
+        <table cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <table cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <p class="hh anima_tx">About Us</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>&nbsp;</p></td>
+                        </tr>
+                        <tr class="tline">
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="#"><span>Our Company</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Our Blog</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Submit a Site</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Contact Us</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Helps &amp; Terms</span></a>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Read Our FAQ</span></a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <p class="hh anima_tx">Popular Topics</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><p>&nbsp;</p></td>
+                        </tr>
+                        <tr class="tline">
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="#"><span>Trends &amp; Technology </span></a><p>(30)</p>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Design Companies </span></a><p>(2699)</p>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Design Freelancers </span></a><p>(23)</p>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Web Portfolios </span></a><p>(16)</p>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>Web Development </span></a><p>(23)</p>
+                                    </li>
+                                    <li>
+                                        <a href="#"><span>General Icons </span></a><p>(34)</p>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="icons" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td colspan="5">
+                                <p class="hh anima_tx">Follow Us Here</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"><p>&nbsp;</p></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href="#" ><img alt="icon" src="images/icons/icon1.png" title="Facebook"/></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon2.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon3.png" title="Vimeo"/></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon4.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon5.png" /></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon6.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon7.png" title="Delicious"/></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon8.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon9.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon10.png" title="Blogger.com"/></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon11.png" title="Youtube"/></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon12.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon13.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon14.png" /></a>
+                            </td>
+                            <td>
+                            <a href="#"><img alt="icon" src="images/icons/icon15.png" /></a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="tw_tab" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <p class="hh anima_tx">Twitter Updates</p>
+                            </td>
+                        </tr>
+                            <tr>
+                            <td>
+                                <img alt="triangle" src="images/triangle.jpg" />
+                                <p class="tw up"><br /><span>@bogothemes</span> there is a new designer in town people!</p>
+                                <p class="tw"><br />You are here <span id="timer">00:00</span> s</p>
+                                <p class="tw down"><br />Check it out: <a href="http://bit.urds">http://bit.urds</a> <br />&nbsp;</p>
+                                <!--<p class="tw down">&nbsp;</p>-->
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="bottom">
+        <p>&copy; Copyright 2009. Box&amp;Cube Theme. Designed by <a href="#"><span>BogoThemes.</span></a></p>
+         <table>
+            <tr>
+                <td>
+                    <a href="#">Home</a>
+                </td>
+                <td></td><td><p>|</p></td><td></td>
+                <td>
+                    <a href="#">About</a>
+                </td>
+                <td></td><td><p>|</p></td><td></td>
+                <td>
+                    <a href="#">Contacts</a>
+                </td>
+                <td></td><td><p>|</p></td><td></td>
+                <td>
+                    <a href="#black-line">Blog</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

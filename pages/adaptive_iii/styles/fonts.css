@@ -1,0 +1,11 @@
+@font-face {
+    font-family: BN;
+    src: url("../fonts/BN.woff2") format("woff2"), 
+        url("../fonts/BN.woff") format("woff");
+}
+
+@font-face {
+    font-family: OpenSans;
+    src: url("../fonts/OpenSans.woff2") format("woff2"), 
+        url("../fonts/OpenSans.woff") format("woff");
+}

@@ -1,0 +1,148 @@
+section {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    height: 210px;
+}
+.hiders {
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% 3%;
+    display: flex;
+    background: blue;
+    box-shadow: 3px 3px 4px #777;
+    color: whitesmoke;
+    width: 200px;
+    height: 200px;
+    font-size: 100px;
+    text-align: center;
+    font-weight: bold;
+    transition-property: background, transform;
+    transition-duration: 0.5s;
+}
+
+.hiders span {
+    align-items: center;
+    background: inherit;
+    border-radius: 50% 30%; /*30%, чтобы при покачивании блок не вылазил за пределы внешнего блока*/
+    box-shadow: inset -2px -2px 3px rgba(256,256,256,0.5);
+    cursor: pointer;
+    display: flex;
+    height: 92%;
+    justify-content: center;
+    left: 4%;
+    position: absolute;
+    top: 4%;
+    width: 92%;
+}
+
+.hiders span:last-child {
+    border-radius: 60% 30%; /*30%, чтобы при покачивании блок не вылазил за пределы внешнего блока*/
+    width: 93%;
+    height: 93%;
+    box-shadow: none;
+}
+
+/*/////////////////АНИМАЦИЯ при наведении////////////////////////////////*/
+@keyframes wigle {
+    25% {transform: rotate(5deg);}
+    50% {transform: scaleX(1.05);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: none;}
+}
+
+@-webkit-keyframes wigle {
+    25% {transform: rotate(5deg);}
+    50% {transform: scaleX(1.05);}
+    75% {transform: rotate(-5deg);}
+    100% {transform: none;}
+}
+
+/*активация покачивания на цифре и белой тени внутри блока .hiders при наведении*/
+.hiders:hover > span {
+    animation: wigle 0.5s 0.15s;
+    -webkit-animation: wigle 0.5s 0.15s;
+}
+
+#forms {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#forms input[type="text"]{
+    border: 2px solid activecaption;
+    border-radius: 50%;
+    box-shadow: 0 0 3px 3px #666;
+    font-size: 15px;
+    height: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+    width: 30px;
+    text-align: center;
+}
+
+h3 {
+    display: inline-block;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+
+fieldset {
+    background: linear-gradient(180deg,whitesmoke,grey);
+    box-shadow: 1px 3px 3px 1px black;
+    border-top: 0;
+    width: 30%;
+}
+
+@media (max-width: 1200px) {
+    fieldset {
+        width: 40%;
+    }
+}
+@media (max-width: 1000px) {
+    fieldset {
+        width: 50%;
+    }
+}
+@media (max-width: 750px) {
+    fieldset {
+        width: 90%;
+    }
+}
+
+fieldset legend {
+    background: whitesmoke;
+    border-radius: 5px;
+    font-weight: bold;
+    opacity: 0.8;
+    text-align: center;
+    margin: 0 -3.5%;
+    width: 105.5%;
+}
+fieldset form p {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-left: 5%;
+    margin-bottom: 0px;
+}
+form p:nth-child(4) {
+    margin-top: 0px;
+}
+#loginCounter {
+    padding-top: 3px;
+    padding-left: 10px;
+    font-size: 70%;
+}
+#textCounter {
+    padding-top: 3px;
+    padding-left: 20px;
+    font-size: 70%;
+}
+fieldset textarea {
+    resize: none;
+    width: 90%;
+}

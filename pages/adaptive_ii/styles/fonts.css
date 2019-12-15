@@ -1,0 +1,4 @@
+@font-face {
+    font-family: euro;
+    src: url("../fonts/euro.woff2") format("woff2"), url("../fonts/euro.woff") format("woff");
+}
