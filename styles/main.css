@@ -1,5 +1,5 @@
 @import url("reset.css");
-@import url("fonts.css");
+/*@import url("fonts.css");*/
 
 body {
     background-color: #090909;
@@ -91,11 +91,14 @@ header h1 sub:last-child {
     margin: 20px;
 }
 
+.example h3 {
+    color: #f5f5f5;
+}
 .example h3, .example h4 {
     font-weight: bold;
     font-size: 90%;
     margin: 0 auto;
-    opacity: 0.75;
+    /*opacity: 0.75;*/
 }
 
 .example h4 {
@@ -114,14 +117,16 @@ header h1 sub:last-child {
     flex-direction: column;
     font-weight: bold;
     padding: 15px 30px;
-    text-shadow: 0 0 20px rgb(236, 220, 123, 0.5);
+    /*text-shadow: 0 0 20px rgb(236, 220, 123, 0.5);*/
+    text-shadow: 0 0 20px rgb(255, 255, 255, 0.25);
     transition-property: background, text-shadow;
     transition-duration: 1s;
 }
 
 .example nav a:hover {
     background-position-y: 100%;
-    text-shadow: 0 0 0 rgba(236, 220, 123, 0.65);
+    /*text-shadow: 0 0 0 rgba(236, 220, 123, 0.65);*/
+    text-shadow: 0 0 0 #f5f5f5;
 }
 
 .example nav a span {
@@ -179,7 +184,6 @@ header h1 sub:last-child {
 }
 
 .top {
-    /*width: 16px;*/
     transform: scale(0.6);
     opacity: 0.12;
 }
@@ -208,7 +212,9 @@ header h1 sub:last-child {
 #foto img:hover {
     opacity: 0;
 }
+
 /*////////////////////////////////////////////////*/
+/*Приветсвую вас и т.д.*/
 
 #about article {
     padding: 15px;
@@ -216,7 +222,7 @@ header h1 sub:last-child {
 
 #about article h2 {
     display: inline-block;
-    color: wheat;
+    color: #f5f5f5;
     font-size: 77%;
     font-weight: bold;
     line-height: 120%;
@@ -251,14 +257,13 @@ footer div {
     width: 350px;
 }
 
-footer a {
-    color: wheat;
+footer a, section p a {
+    color: rgb(255, 255, 255, 0.50);
 }
-
-section p a {
-    color: wheat;
+footer a:hover, section p a:hover {
+    color: whitesmoke;
+    transition-duration: 0.6s;
 }
-
 footer div figure img {
     width: 50px;
 }
